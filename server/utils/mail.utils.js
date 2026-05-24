@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport(
 const sendEmail =  function(name,email,message) {
     return new Promise((resolve, reject) => {
         transporter.sendMail({
-            to: 'sumukhasureban@gmail.com',
+            to: 'yashasd36@gmail.com',
             subject: `Hey I am ${name} and mailid is ${email}`,
             html: `<p>${message}</p>`
         }, (error, info) => {

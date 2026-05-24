@@ -55,7 +55,7 @@ function Patents() {
         {/* Back Button */}
         <Link 
           to="/" 
-          className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-8 transition-all hover:gap-3 group"
+          className="inline-flex items-center gap-2 mb-8 transition-all hover:gap-3 group text-cyan"
         >
           <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -67,30 +67,30 @@ function Patents() {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 mb-6">
             <span className="text-2xl">📜</span>
-            <span className="text-purple-400 font-semibold tracking-wider uppercase text-sm">Intellectual Property</span>
+            <span className="font-semibold tracking-wider uppercase text-sm text-link">Intellectual Property</span>
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 animate-gradient">
               Patents
             </span>
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="max-w-2xl mx-auto text-lg text-secondary">
             Innovative solutions transforming ideas into protected intellectual property
           </p>
           
           {/* Stats Bar */}
           <div className="flex justify-center gap-8 mt-10">
             <div className="glass-card px-6 py-4 rounded-2xl text-center">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{patents.length}</div>
-              <div className="text-gray-400 text-sm">Patents Filed</div>
+              <div className="text-3xl font-bold text-link">{patents.length}</div>
+              <div className="text-sm text-secondary">Patents Filed</div>
             </div>
             <div className="glass-card px-6 py-4 rounded-2xl text-center">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">{patents.filter(p => p.status.includes('Pending')).length}</div>
-              <div className="text-gray-400 text-sm">Grant Pending</div>
+              <div className="text-3xl font-bold text-link">{patents.filter(p => p.status.includes('Pending')).length}</div>
+              <div className="text-sm text-secondary">Grant Pending</div>
             </div>
             <div className="glass-card px-6 py-4 rounded-2xl text-center">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">{patents.filter(p => p.status === 'Granted').length}</div>
-              <div className="text-gray-400 text-sm">Granted</div>
+              <div className="text-3xl font-bold text-link">{patents.filter(p => p.status === 'Granted').length}</div>
+              <div className="text-sm text-secondary">Granted</div>
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@ function Patents() {
                       <span className="px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 border border-purple-500/30">
                         {patent.category}
                       </span>
-                      <span className="text-gray-500 text-sm ml-auto hidden md:block">{patent.date}</span>
+                      <span className="text-sm ml-auto hidden md:block text-muted">{patent.date}</span>
                     </div>
 
                     {/* Title with Icon */}
@@ -138,7 +138,7 @@ function Patents() {
                         <h3 className="text-2xl md:text-3xl font-bold mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
                           {patent.title}
                         </h3>
-                        <p className="text-purple-400 font-mono text-sm flex items-center gap-2">
+                        <p className="font-mono text-sm flex items-center gap-2 text-cyan">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
                           </svg>
@@ -148,17 +148,17 @@ function Patents() {
                     </div>
 
                     {/* Date for mobile */}
-                    <p className="text-gray-500 text-sm mb-4 md:hidden">{patent.date}</p>
+                    <p className="text-sm mb-4 md:hidden text-muted">{patent.date}</p>
 
                     {/* Description */}
-                    <p className="text-gray-400 leading-relaxed mb-8 text-lg">
+                    <p className="leading-relaxed mb-8 text-lg text-secondary">
                       {patent.description}
                     </p>
 
                     {/* Inventors */}
                     {patent.inventors && (
                       <div className="mb-6">
-                        <p className="text-gray-500 text-sm mb-3 flex items-center gap-2">
+                        <p className="text-sm mb-3 flex items-center gap-2 text-muted">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                           </svg>
@@ -169,7 +169,6 @@ function Patents() {
                             <span 
                               key={i} 
                               className="px-4 py-2 rounded-full text-sm glass-card text-gray-300 border border-gray-600/50 hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
-                              style={{ transform: 'none' }}
                             >
                               {inventor}
                             </span>
@@ -235,14 +234,14 @@ function Patents() {
           <div className="glass-card rounded-3xl p-16 text-center border border-white/5">
             <div className="text-8xl mb-6 animate-bounce">📜</div>
             <h3 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">No Patents Added Yet</h3>
-            <p className="text-gray-400 text-lg">Patent information will be displayed here once added.</p>
+            <p className="text-lg text-secondary">Patent information will be displayed here once added.</p>
           </div>
         )}
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <div className="glass-card rounded-2xl p-8 inline-block">
-            <p className="text-gray-400 mb-4">Interested in collaborating on innovative projects?</p>
+            <p className="text-secondary mb-4">Interested in collaborating on innovative projects?</p>
             <Link 
               to="/#contact" 
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all hover:scale-105"

@@ -67,35 +67,26 @@ function Skills() {
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-purple-400 font-semibold tracking-wider uppercase mb-4">What I Know</p>
+          <p className="font-semibold tracking-wider uppercase mb-4 text-cyan">What I Know</p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">My Skills</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto text-secondary">
             A comprehensive overview of my technical expertise and professional competencies.
           </p>
         </div>
 
-        {/* Technical Skills with Progress Bars */}
+        {/* Technical Proficiency */}
         <div className="glass-card rounded-2xl p-8 mb-12">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-            <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-lg">
+            <span className="w-10 h-10 rounded-lg flex items-center justify-center text-lg bg-brand">
               🧠
             </span>
             Technical Proficiency
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="flex flex-wrap gap-3">
             {technicalSkills.map((skill, index) => (
-              <div key={index} className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="font-medium">{skill.name}</span>
-                  <span className="text-purple-400 text-sm">{skill.level}%</span>
-                </div>
-                <div className="h-3 bg-white/5 rounded-full overflow-hidden">
-                  <div
-                    className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
-                    style={{ width: `${skill.level}%` }}
-                  />
-                </div>
-              </div>
+              <span key={index} className="skill-badge-ai text-sm">
+                {skill.name}
+              </span>
             ))}
           </div>
         </div>
@@ -117,50 +108,48 @@ function Skills() {
           ))}
         </div>
 
-        {/* Soft Skills */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <div className="glass-card rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-lg">
-                🎯
-              </span>
-              Soft Skills
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              {softSkills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
-                >
-                  <span className="text-2xl">{skill.icon}</span>
-                  <span className="text-sm font-medium">{skill.name}</span>
+        {/* Certifications */}
+        <div className="glass-card rounded-2xl p-8 mb-12">
+          <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span className="w-10 h-10 rounded-lg flex items-center justify-center text-lg bg-brand">
+              🏆
+            </span>
+            Certifications
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            {certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4 p-4 rounded-xl transition-colors bg-elevated"
+              >
+                <span className="text-3xl">{cert.icon}</span>
+                <div>
+                  <h4 className="font-semibold">{cert.name}</h4>
+                  <p className="text-sm text-secondary">{cert.provider}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* Certifications */}
-          <div className="glass-card rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-lg">
-                🏆
-              </span>
-              Certifications
-            </h3>
-            <div className="space-y-4">
-              {certifications.map((cert, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
-                >
-                  <span className="text-3xl">{cert.icon}</span>
-                  <div>
-                    <h4 className="font-semibold">{cert.name}</h4>
-                    <p className="text-sm text-gray-400">{cert.provider}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Soft Skills */}
+        <div className="glass-card rounded-2xl p-8 mb-12">
+          <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span className="w-10 h-10 rounded-lg flex items-center justify-center text-lg bg-brand">
+              🎯
+            </span>
+            Soft Skills
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {softSkills.map((skill, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 p-3 rounded-xl bg-elevated"
+              >
+                <span className="text-2xl">{skill.icon}</span>
+                <span className="text-sm font-medium">{skill.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

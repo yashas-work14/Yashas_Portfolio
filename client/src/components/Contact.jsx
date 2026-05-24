@@ -54,8 +54,8 @@ function Contact() {
         </svg>
       ),
       label: 'Email',
-      value: 'yashasd2004@gmail.com',
-      href: 'mailto:yashasd2004@gmail.com',
+      value: 'yashasd36@gmail.com',
+      href: 'mailto:yashasd36@gmail.com',
     },
     {
       icon: (
@@ -108,9 +108,9 @@ function Contact() {
         <div className="container mx-auto max-w-6xl">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <p className="text-purple-400 font-semibold tracking-wider uppercase mb-4">Let's Connect</p>
+            <p className="font-semibold tracking-wider uppercase mb-4 text-cyan">Let's Connect</p>
             <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">Get in Touch</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="max-w-2xl mx-auto text-secondary">
               Have a project in mind or want to collaborate? Feel free to reach out. I'm always open to discussing new opportunities.
             </p>
           </div>
@@ -120,7 +120,7 @@ function Contact() {
             <div className="space-y-8">
               <div className="glass-card rounded-2xl p-8">
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                  <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                  <span className="w-10 h-10 rounded-lg flex items-center justify-center icon-box">
                     📬
                   </span>
                   Contact Information
@@ -131,14 +131,14 @@ function Contact() {
                     <a
                       key={index}
                       href={info.href}
-                      className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group"
+                      className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group contact-item"
                     >
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
                         {info.icon}
                       </div>
                       <div>
-                        <p className="text-sm text-gray-400">{info.label}</p>
-                        <p className="font-medium group-hover:text-purple-400 transition-colors">{info.value}</p>
+                        <p className="text-sm text-secondary">{info.label}</p>
+                        <p className="font-medium contact-value">{info.value}</p>
                       </div>
                     </a>
                   ))}
@@ -168,15 +168,14 @@ function Contact() {
             {/* Contact Form */}
             <div className="glass-card rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                  ✉️
+                <span className="w-10 h-10 rounded-lg flex items-center justify-center icon-box">
                 </span>
                 Send a Message
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="name">
+                  <label className="block text-sm font-medium mb-2 text-secondary" htmlFor="name">
                     Your Name
                   </label>
                   <input
@@ -193,7 +192,7 @@ function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="email">
+                  <label className="block text-sm font-medium mb-2 text-secondary" htmlFor="email">
                     Your Email
                   </label>
                   <input
@@ -210,7 +209,7 @@ function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="message">
+                  <label className="block text-sm font-medium mb-2 text-secondary" htmlFor="message">
                     Your Message
                   </label>
                   <textarea

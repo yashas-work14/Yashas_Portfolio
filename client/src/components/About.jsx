@@ -1,16 +1,9 @@
 import React from 'react';
 
 function About() {
-  const startDate = new Date('2023-09-01');
-  const now = new Date();
-  const diffMonths =
-    (now.getFullYear() - startDate.getFullYear()) * 12 +
-    (now.getMonth() - startDate.getMonth());
-  const yearsExp = Math.floor(diffMonths / 12);
-
   const stats = [
-    { number: `${yearsExp}+`, label: 'Years Experience' },
-    { number: '9', label: 'Publications' },
+    { number: '1.8+', label: 'Years Experience' },
+    { number: '8', label: 'IEEE Publications' },
     { number: '2', label: 'Patents' },
     { number: '5', label: 'Research Domains' },
   ];
@@ -20,7 +13,7 @@ function About() {
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-purple-400 font-semibold tracking-wider uppercase mb-4">Get to know me</p>
+          <p className="font-semibold tracking-wider uppercase mb-4 text-cyan">Get to know me</p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text">About Me</h2>
         </div>
 
@@ -29,23 +22,24 @@ function About() {
           <div className="space-y-6">
             <div className="glass-card rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                <span className="w-10 h-10 rounded-lg flex items-center justify-center icon-box">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </span>
                 Who I Am
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="leading-relaxed mb-4 text-secondary"
+              >
                 AI/ML Engineer & GenAI Developer with a BE (Hons) in{' '}
-                <span className="text-purple-400 font-semibold">Artificial Intelligence & Machine Learning</span> (CGPA 9.38). Currently working at{' '}
-                <span className="text-purple-400 font-semibold">Siemens</span> as a Graduate Trainee Engineer, building an
+                <span className="font-semibold text-link">Artificial Intelligence & Machine Learning</span> (CGPA 9.38). Currently working at{' '}
+                <span className="font-semibold text-link">Siemens</span> as a Graduate Trainee Engineer, building an
                 LLM-powered Industrial Copilot integrated with TIA Portal using C#, Qwen, and DeepSeek.
               </p>
-              <p className="text-gray-400 leading-relaxed">
-                I have published <span className="text-purple-400 font-semibold">9 research papers (8 IEEE + 1 Springer)</span> across healthcare AI, computer vision,
+              <p className="leading-relaxed text-secondary">
+                I have published <span className="font-semibold text-link">9 research papers (8 IEEE + 1 Springer)</span> across healthcare AI, computer vision,
                 NLP, smart cities, and precision agriculture — and hold 2 granted patents.
-                Previously interned at <span className="text-purple-400 font-semibold">Yokogawa India</span> as a GenAI intern building NLP pipelines on Azure.
+                Previously interned at <span className="font-semibold text-link">Yokogawa India</span> as a GenAI intern building NLP pipelines on Azure.
               </p>
             </div>
 
@@ -64,7 +58,7 @@ function About() {
           {/* Right - Education Timeline */}
           <div className="glass-card rounded-2xl p-8">
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+              <span className="w-10 h-10 rounded-lg flex items-center justify-center icon-box">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M12 14l9-5-9-5-9 5 9 5z" />
                   <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -76,16 +70,16 @@ function About() {
 
             <div className="space-y-8">
               <div className="timeline-item">
-                <div className="glass rounded-xl p-4 ml-4 border border-purple-500/30 hover:border-purple-500/50 transition-all duration-300">
-                  <span className="text-purple-400 text-sm font-semibold">2021 - 2025</span>
+                <div className="glass rounded-xl p-4 ml-4 border-active">
+                  <span className="text-sm font-semibold text-cyan">2021 - 2025</span>
                   <h4 className="text-lg font-bold mt-1 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 flex items-center gap-2 flex-wrap">
                     Bachelor of Engineering with Honours 🎖️
                   </h4>
-                  <p className="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30">
+                  <p className="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full nav-active-bg border border-[rgba(124,58,237,0.15)]">
                     <span className="text-lg">🤖</span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300 text-sm font-semibold tracking-wide">Artificial Intelligence & Machine Learning</span>
+                    <span className="gradient-text text-sm font-semibold tracking-wide">Artificial Intelligence & Machine Learning</span>
                   </p>
-                  <p className="text-gray-400 text-sm mt-2">New Horizon College of Engineering, Bengaluru</p>
+                  <p className="text-sm mt-2 text-secondary">New Horizon College of Engineering, Bengaluru</p>
                   <p className="text-green-400 text-sm mt-1 font-medium flex items-center gap-1">
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
                     CGPA: 9.38
@@ -95,9 +89,9 @@ function About() {
 
               <div className="timeline-item">
                 <div className="glass rounded-xl p-4 ml-4">
-                  <span className="text-purple-400 text-sm font-semibold">2019 - 2020</span>
+                  <span className="text-sm font-semibold text-cyan">2019 - 2020</span>
                   <h4 className="text-lg font-bold mt-1">Pre-University</h4>
-                  <p className="text-gray-400 text-sm mt-1">Presidency Pre-University College </p>
+                  <p className="text-sm mt-1 text-secondary">Presidency Pre-University College, Sira, Tumkur</p>
                   <p className="text-green-400 text-sm mt-1 font-medium">Percentage: 92%</p>
                 </div>
               </div>
@@ -113,7 +107,7 @@ function About() {
               className="glass-card rounded-2xl p-6 text-center"
             >
               <h4 className="text-3xl sm:text-4xl font-bold gradient-text">{stat.number}</h4>
-              <p className="text-gray-400 mt-2 text-sm">{stat.label}</p>
+              <p className="mt-2 text-sm text-secondary">{stat.label}</p>
             </div>
           ))}
         </div>

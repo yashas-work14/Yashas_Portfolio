@@ -40,28 +40,29 @@ function Header() {
           {/* Left Content */}
           <div className="space-y-8 text-center lg:text-left order-2 lg:order-1">
             <div className="space-y-4">
-              <p className="text-purple-400 font-semibold tracking-wider uppercase animate-slide-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+              <p className="font-semibold tracking-wider uppercase animate-slide-up opacity-0 text-cyan delay-200">
                 Welcome to my portfolio
               </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight animate-slide-up opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight animate-slide-up opacity-0 delay-400">
                 Hi, I'm{' '}
                 <span className="gradient-text">Yashas D</span>
                 <br />
                 <span className="gradient-text"></span>
               </h1>
-              <div className="h-12 flex items-center justify-center lg:justify-start animate-slide-up opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-                <span className="text-xl sm:text-2xl text-gray-400">
-                  I'm a <span className="text-white font-semibold typing-cursor">{text}</span>
+              <div className="h-12 flex items-center justify-center lg:justify-start animate-slide-up opacity-0 delay-600">
+                <span className="text-xl sm:text-2xl text-secondary">
+                  I'm a{' '}
+                  <span className="font-semibold typing-cursor px-3 py-1 rounded-full text-white role-badge">{text}</span>
                 </span>
               </div>
             </div>
 
-            <p className="text-gray-400 text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed animate-slide-up opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+            <p className="text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed animate-slide-up opacity-0 text-secondary delay-800">
               AI/ML Engineer & GenAI Developer at Siemens. I build intelligent systems — from LLM-powered copilots and computer vision pipelines to 9 research papers (8 IEEE + 1 Springer) spanning healthcare AI, smart cities, and precision agriculture.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-slide-up opacity-0" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-slide-up opacity-0 delay-1000">
               <a href="#contact" className="btn-primary">
                 <span className="flex items-center gap-2">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +77,7 @@ function Header() {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 justify-center lg:justify-start animate-slide-up opacity-0" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>
+            <div className="flex gap-4 justify-center lg:justify-start animate-slide-up opacity-0 delay-1200">
               <a href="https://github.com/Yashas14" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -92,7 +93,7 @@ function Header() {
                   <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
                 </svg>
               </a>
-              <a href="mailto:yashasd2004@gmail.com" className="social-icon">
+              <a href="mailto:yashasd36@gmail.com" className="social-icon">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -101,14 +102,14 @@ function Header() {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="flex justify-center order-1 lg:order-2 animate-slide-up opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+          <div className="flex justify-center order-1 lg:order-2 animate-slide-up opacity-0 delay-400">
             <div className="relative">
               {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse-slow" />
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-spin-slow" />
+              <div className="absolute -inset-4 rounded-full blur-2xl opacity-25 animate-pulse-slow bg-brand" />
+              <div className="absolute -inset-1 rounded-full animate-spin-slow bg-brand" />
 
               {/* Profile Image */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-slate-900">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-[#0A0A0F]">
                 <img
                   src={imgSrc}
                   alt="Yashas D"
@@ -123,8 +124,8 @@ function Header() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 animate-bounce-slow">
-          <span className="text-gray-500 text-sm">Scroll Down</span>
-          <svg className="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <span className="text-sm text-muted">Scroll Down</span>
+          <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>

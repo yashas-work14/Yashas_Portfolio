@@ -102,7 +102,7 @@ function SkillsPage() {
         {/* Back Button */}
         <Link 
           to="/" 
-          className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 mb-8 transition-colors text-cyan"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -112,9 +112,9 @@ function SkillsPage() {
 
         {/* Page Header */}
         <div className="text-center mb-12">
-          <p className="text-purple-400 font-semibold tracking-wider uppercase mb-4">What I Know</p>
+          <p className="font-semibold tracking-wider uppercase mb-4 text-link">What I Know</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold gradient-text mb-4">Skills</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto text-secondary">
             A comprehensive overview of my technical skills and proficiencies.
           </p>
         </div>
@@ -131,7 +131,7 @@ function SkillsPage() {
                 {category.skills?.map((skill, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/40 transition-all duration-200"
+                    className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10 border hover:border-purple-500/40 transition-all duration-200 bg-elevated border-subtle"
                   >
                     <span className="font-medium text-sm">{skill.name}</span>
                   </div>
@@ -152,7 +152,7 @@ function SkillsPage() {
               {tools.map((tool, i) => (
                 <div 
                   key={i}
-                  className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/40 transition-all duration-200"
+                  className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10 border hover:border-purple-500/40 transition-all duration-200 bg-elevated border-subtle"
                 >
                   <span className="text-xl">{tool.icon}</span>
                   <span className="font-medium text-sm">{tool.name}</span>

@@ -40,7 +40,7 @@ function Footer() {
     },
     {
       name: 'Email',
-      href: 'mailto:yashasd2004@gmail.com',
+      href: 'mailto:yashasd36@gmail.com',
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -60,15 +60,15 @@ function Footer() {
             {/* Brand */}
             <div className="space-y-4">
               <a href="#" className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center font-bold text-lg">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg bg-brand">
                   YD
                 </div>
                 <div>
                   <span className="font-bold text-lg gradient-text">Yashas D</span>
-                  <p className="text-gray-400 text-sm">AI/ML Engineer</p>
+                  <p className="text-sm text-secondary">Gen AI Developer</p>
                 </div>
               </a>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-secondary">
                 Crafting digital experiences with passion and precision. Let's build something amazing together.
               </p>
             </div>
@@ -81,8 +81,7 @@ function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
-                    >
+                      className="text-sm transition-colors footer-link">
                       {link.name}
                     </a>
                   </li>
@@ -113,10 +112,10 @@ function Footer() {
           {/* Bottom */}
           <div className="section-divider mb-6" />
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-sm text-secondary">
               © {2026} Yashas D. All rights reserved.
             </p>
-            <p className="text-gray-500 text-sm flex items-center gap-2">
+            <p className="text-sm flex items-center gap-2 text-muted">
               Made with 
               <span className="text-red-500 animate-pulse">❤️</span> 
               using React & Tailwind

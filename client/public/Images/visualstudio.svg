@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="vs1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a466cf"/><stop offset="1" stop-color="#7b2fbe"/></linearGradient>
+    <linearGradient id="vs2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c07ef0"/><stop offset="1" stop-color="#9a45d9"/></linearGradient>
+  </defs>
+  <rect x="8" y="8" width="84" height="84" rx="18" fill="url(#vs1)"/>
+  <text x="50" y="65" font-size="50" text-anchor="middle" fill="white" font-family="serif" font-weight="bold">VS</text>
+</svg>

@@ -325,7 +325,7 @@ function ProjectsPage() {
         {/* Back Button */}
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 mb-8 transition-colors text-cyan"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -335,13 +335,13 @@ function ProjectsPage() {
 
         {/* Page Header */}
         <div className="text-center mb-12">
-          <p className="text-purple-400 font-semibold tracking-wider uppercase mb-4">
+          <p className="font-semibold tracking-wider uppercase mb-4 text-link">
             My Work
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold gradient-text mb-4">
             Projects
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto text-secondary">
             A curated collection of {allProjects.length} projects spanning AI/ML,
             Computer Vision, Data Science, Web Development, and more.
           </p>
@@ -401,7 +401,7 @@ function ProjectsPage() {
         </div>
 
         {/* Results Count */}
-        <p className="text-gray-500 text-sm mb-6 text-center">
+        <p className="text-sm mb-6 text-center text-muted">
           Showing {filteredProjects.length} of {allProjects.length} projects
         </p>
 
@@ -458,12 +458,12 @@ function ProjectsPage() {
                     <h3 className="text-lg font-bold group-hover:text-purple-400 transition-colors leading-tight">
                       {project.title}
                     </h3>
-                    <p className="text-purple-400 text-sm font-medium mt-1">
+                    <p className="text-sm font-medium mt-1 text-cyan">
                       {project.subtitle}
                     </p>
                   </div>
 
-                  <p className="text-gray-400 text-sm leading-relaxed flex-1">
+                  <p className="text-sm leading-relaxed flex-1 text-secondary">
                     {project.description}
                   </p>
 

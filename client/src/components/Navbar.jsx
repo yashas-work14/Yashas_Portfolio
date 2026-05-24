@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Moon, Sun, Github, Linkedin } from 'lucide-react'
-import { useTheme } from '../context/ThemeContext'
+import { Menu, X, Github, Linkedin } from 'lucide-react'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -10,7 +9,6 @@ function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const location = useLocation()
   const isHomePage = location.pathname === '/'
-  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,7 +75,7 @@ function Navbar() {
               <Link to="/" className="flex items-center gap-3 group">
                 <div className="relative">
                   <motion.div 
-                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center font-bold text-lg shadow-lg transition-all duration-300"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg transition-all duration-300 bg-brand"
                     whileHover={{ 
                       boxShadow: '0 0 30px rgba(168, 85, 247, 0.5)',
                       rotate: [0, -5, 5, 0]
@@ -86,11 +84,11 @@ function Navbar() {
                   >
                     YD
                   </motion.div>
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
+                  <div className="absolute inset-0 rounded-xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-300 bg-brand" />
                 </div>
                 <div className="hidden sm:block">
                   <motion.span 
-                    className="font-bold text-xl bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent"
+                    className="font-bold text-xl gradient-text"
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
@@ -98,12 +96,12 @@ function Navbar() {
                     Yashas D
                   </motion.span>
                   <motion.span 
-                    className="text-gray-400 text-sm block"
+                    className="text-sm block text-secondary"
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    AI/ML Engineer
+                    Gen AI Developer
                   </motion.span>
                 </div>
               </Link>
@@ -124,17 +122,17 @@ function Navbar() {
                       className="relative px-4 py-2 text-gray-300 hover:text-white font-medium transition-colors duration-300 group"
                     >
                       {link.name}
-                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-3/4 transition-all duration-300 rounded-full" />
+                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 group-hover:w-3/4 transition-all duration-300 rounded-full bg-brand" />
                     </a>
                   ) : (
                     <Link
                       to={link.href}
                       className={`relative px-4 py-2 font-medium transition-colors duration-300 group ${
-                        location.pathname === link.href ? 'text-purple-400' : 'text-gray-300 hover:text-white'
+                        location.pathname === link.href ? 'text-violet-400' : 'text-gray-300 hover:text-white'
                       }`}
                     >
                       {link.name}
-                      <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 rounded-full ${
+                      <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 transition-all duration-300 rounded-full bg-brand ${
                         location.pathname === link.href ? 'w-3/4' : 'w-0 group-hover:w-3/4'
                       }`} />
                     </Link>
@@ -163,7 +161,7 @@ function Navbar() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </motion.svg>
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-3/4 transition-all duration-300 rounded-full" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 group-hover:w-3/4 transition-all duration-300 rounded-full bg-brand" />
                 </button>
                 
                 <AnimatePresence>
@@ -175,7 +173,7 @@ function Navbar() {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
                     >
-                      <div className="glass rounded-2xl p-4 min-w-[280px] grid grid-cols-2 gap-2 border border-white/10">
+                      <div className="rounded-2xl p-4 min-w-[280px] grid grid-cols-2 gap-2 dropdown-panel">
                         {pageLinks.map((link, i) => (
                           <motion.div
                             key={link.name}
@@ -187,8 +185,8 @@ function Navbar() {
                               to={link.href}
                               className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 whitespace-nowrap flex items-center gap-2 ${
                                 location.pathname === link.href 
-                                  ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 border border-purple-500/30' 
-                                  : 'text-gray-300 hover:bg-white/10 hover:text-white hover:translate-x-1'
+                                  ? 'text-violet-400 nav-active-bg' 
+                                  : 'text-gray-300 hover:text-white hover:translate-x-1'
                               }`}
                             >
                               {link.name}
@@ -217,7 +215,7 @@ function Navbar() {
                     transition={{ delay: 0.4 + index * 0.1 }}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="p-2 text-gray-400 hover:text-purple-400 transition-colors"
+                    className="p-2 text-gray-400 hover:text-violet-400 transition-colors"
                     title={social.label}
                   >
                     {social.CustomIcon ? <social.CustomIcon /> : <social.icon size={20} />}
@@ -225,38 +223,7 @@ function Navbar() {
                 ))}
               </div>
 
-              {/* Theme Toggle */}
-              <motion.button
-                onClick={toggleTheme}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-2.5 rounded-xl glass hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 border border-white/10"
-                title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-              >
-                <AnimatePresence mode="wait">
-                  {theme === 'dark' ? (
-                    <motion.div
-                      key="sun"
-                      initial={{ opacity: 0, rotate: -90, scale: 0 }}
-                      animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                      exit={{ opacity: 0, rotate: 90, scale: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Sun size={20} className="text-yellow-400" />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="moon"
-                      initial={{ opacity: 0, rotate: 90, scale: 0 }}
-                      animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                      exit={{ opacity: 0, rotate: -90, scale: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Moon size={20} className="text-purple-400" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.button>
+
 
               {/* Hire Me Button - Desktop */}
               <motion.a
@@ -266,7 +233,7 @@ function Navbar() {
                 transition={{ delay: 0.5 }}
                 whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(168, 85, 247, 0.4)' }}
                 whileTap={{ scale: 0.95 }}
-                className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-sm shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
+                className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-white font-semibold text-sm transition-all duration-300 hire-me-btn"
               >
                 Hire Me
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -278,7 +245,7 @@ function Navbar() {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2.5 rounded-xl glass border border-white/10"
+                className="lg:hidden p-2.5 rounded-xl dropdown-panel"
               >
                 <AnimatePresence mode="wait">
                   {mobileMenuOpen ? (
@@ -331,7 +298,7 @@ function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm glass border-l border-white/10 p-6 pt-24"
+              className="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm p-6 pt-24 mobile-menu-panel"
             >
               <div className="flex flex-col h-full">
                 {/* Navigation Links */}
@@ -356,8 +323,8 @@ function Navbar() {
                           to={link.href}
                           className={`block px-4 py-3 rounded-xl text-lg font-medium transition-all ${
                             location.pathname === link.href 
-                              ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400' 
-                              : 'text-gray-300 hover:text-white hover:bg-white/10'
+                              ? 'text-violet-400 nav-active-bg' 
+                              : 'text-gray-300 hover:text-white'
                           }`}
                         >
                           {link.name}
@@ -368,7 +335,7 @@ function Navbar() {
                 </div>
 
                 {/* Divider */}
-                <div className="my-4 border-t border-white/10" />
+                <div className="my-4 border-t border-subtle" />
                 <p className="text-xs text-gray-500 px-4 uppercase tracking-wider mb-2">Portfolio</p>
 
                 {/* Page Links */}
@@ -384,8 +351,8 @@ function Navbar() {
                         to={link.href}
                         className={`block px-4 py-3 rounded-xl font-medium transition-all ${
                           location.pathname === link.href 
-                            ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400' 
-                            : 'text-gray-300 hover:text-white hover:bg-white/10'
+                            ? 'text-violet-400 nav-active-bg' 
+                            : 'text-gray-300 hover:text-white'
                         }`}
                       >
                         {link.name}
@@ -395,7 +362,7 @@ function Navbar() {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="mt-auto pt-6 border-t border-white/10">
+                <div className="mt-auto pt-6 border-t border-subtle">
                   {/* Social Links */}
                   <div className="flex items-center justify-center gap-4 mb-4">
                     {socialLinks.map((social) => (
@@ -406,7 +373,7 @@ function Navbar() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-3 rounded-xl glass text-gray-400 hover:text-purple-400 transition-colors"
+                        className="p-3 rounded-xl text-gray-400 hover:text-violet-400 transition-colors mobile-social-btn"
                       >
                         {social.CustomIcon ? <social.CustomIcon /> : <social.icon size={24} />}
                       </motion.a>
@@ -419,7 +386,7 @@ function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="block w-full text-center px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold shadow-lg shadow-purple-500/25"
+                    className="block w-full text-center px-6 py-3 rounded-xl text-white font-semibold hire-me-btn"
                   >
                     Hire Me
                   </motion.a>

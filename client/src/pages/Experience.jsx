@@ -60,6 +60,48 @@ function Experience() {
         />
       ),
     },
+    {
+      company: 'VaultofCodes',
+      role: 'Web Development Intern',
+      type: 'Internship',
+      duration: 'Oct 2023 - Nov 2023',
+      location: 'Remote',
+      description: 'Completed an intensive web development internship focused on building practical skills across the full stack. Gained real-world exposure to how modern web applications are built from the ground up.',
+      achievements: [
+        'Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript',
+        'Gained hands-on experience in back-end web development, including server-side logic and database integration',
+        'Developed real-world projects that strengthened problem-solving and coding skills',
+        'Collaborated in a structured internship environment simulating industry-level development workflows',
+      ],
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Front-End Development', 'Back-End Web Development'],
+      color: 'from-orange-500 to-orange-600',
+      logo: (
+        <div className="w-full h-full flex items-center justify-center bg-orange-50 text-orange-600 font-bold text-lg">
+          VC
+        </div>
+      ),
+    },
+    {
+      company: 'CloudplusAI Technology',
+      role: 'Cloud Computing with AWS Intern',
+      type: 'Internship',
+      duration: 'Sep 2023 - Nov 2023',
+      location: 'Remote',
+      description: 'Completed an internship focused on Cloud Computing using Amazon Web Services (AWS), gaining practical knowledge of cloud infrastructure and services. Sparked a strong interest in cloud technologies.',
+      achievements: [
+        'Explored core AWS services including EC2, S3, and IAM, and applied cloud deployment fundamentals',
+        'Gained understanding of cloud architecture, scalability, and resource management on the AWS platform',
+        'Applied theoretical cloud concepts to practical use cases relevant to modern tech infrastructure',
+        'Worked remotely in a professional environment, developing self-management and independent problem-solving skills',
+      ],
+      technologies: ['AWS', 'EC2', 'S3', 'IAM', 'Cloud Computing', 'Cloud Architecture'],
+      color: 'from-yellow-500 to-yellow-600',
+      logo: (
+        <div className="w-full h-full flex items-center justify-center bg-yellow-50 text-yellow-600 font-bold text-lg">
+          CA
+        </div>
+      ),
+    },
   ]
 
   return (
@@ -68,8 +110,7 @@ function Experience() {
         {/* Back Button */}
         <Link 
           to="/" 
-          className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-8 transition-colors group"
-        >
+          className="inline-flex items-center gap-2 mb-8 transition-colors group text-cyan hover-text-accent">
           <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -78,12 +119,12 @@ function Experience() {
 
         {/* Page Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 nav-active-bg">
             <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-accent-primary"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-accent-primary"></span>
             </span>
-            <span className="text-purple-400 font-medium text-sm">Career Journey</span>
+              <span className="font-medium text-sm text-link">Career Journey</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
             <span className="gradient-text">Work</span> Experience
@@ -95,16 +136,16 @@ function Experience() {
           {/* Stats Bar */}
           <div className="flex flex-wrap justify-center gap-8 mt-10">
             <div className="text-center">
-              <p className="text-3xl font-bold gradient-text">{experiences.length}+</p>
-              <p className="text-gray-500 text-sm">Companies</p>
+              <p className="text-3xl font-bold gradient-text">2+</p>
+              <p className="text-sm text-muted">Companies</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold gradient-text">{expYears}+</p>
-              <p className="text-gray-500 text-sm">Years</p>
+              <p className="text-3xl font-bold gradient-text">1.8+</p>
+              <p className="text-sm text-muted">Years</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold gradient-text">15+</p>
-              <p className="text-gray-500 text-sm">Projects</p>
+              <p className="text-3xl font-bold gradient-text">5+</p>
+              <p className="text-sm text-muted">Projects</p>
             </div>
           </div>
         </div>
@@ -113,7 +154,7 @@ function Experience() {
         {experiences.length > 0 ? (
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500 transform md:-translate-x-1/2 rounded-full" />
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 transform md:-translate-x-1/2 rounded-full bg-brand" />
 
             <div className="space-y-12">
               {experiences.map((exp, index) => (
@@ -133,18 +174,18 @@ function Experience() {
 
                   {/* Content */}
                   <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'} pl-20 md:pl-0`}>
-                    <div className="glass-card rounded-2xl p-8 hover:scale-[1.02] transition-all duration-300 border border-white/5 hover:border-purple-500/30 group">
+                    <div className="glass-card rounded-2xl p-8 hover:scale-[1.02] transition-all duration-300 border-subtle">
                       {/* Company Header */}
                       <div className="flex items-start justify-between mb-4">
                         <div>
-                          <h3 className="text-2xl font-bold group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all">
+                          <h3 className="text-2xl font-bold transition-all">
                             {exp.role}
                           </h3>
-                          <p className={`font-semibold text-transparent bg-clip-text bg-gradient-to-r ${exp.color}`}>
+                          <p className="font-semibold gradient-text">
                             @ {exp.company}
                           </p>
                         </div>
-                        <span className={`px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${exp.color} text-white shadow-lg`}>
+                        <span className="px-3 py-1 rounded-full text-xs font-bold text-white shadow-lg bg-brand">
                           {exp.type}
                         </span>
                       </div>
@@ -152,13 +193,13 @@ function Experience() {
                       {/* Meta Info */}
                       <div className="flex flex-wrap items-center gap-4 mb-4 text-sm">
                         <span className="flex items-center gap-2 text-gray-400 bg-white/5 px-3 py-1 rounded-full">
-                          <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                           </svg>
                           {exp.duration}
                         </span>
-                        <span className="flex items-center gap-2 text-gray-400 bg-white/5 px-3 py-1 rounded-full">
-                          <svg className="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span className="flex items-center gap-2 px-3 py-1 rounded-full text-secondary bg-elevated">
+                          <svg className="w-4 h-4 text-link" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           </svg>
                           {exp.location}
@@ -166,7 +207,7 @@ function Experience() {
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-400 mb-6 leading-relaxed">{exp.description}</p>
+                      <p className="mb-6 leading-relaxed text-secondary">{exp.description}</p>
 
                       {/* Key Contributions */}
                       {exp.achievements && exp.achievements.length > 0 && (
@@ -193,7 +234,7 @@ function Experience() {
                             {exp.technologies.map((tech, i) => (
                               <span 
                                 key={i} 
-                                className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-300 hover:bg-purple-500/20 hover:border-purple-500/30 hover:text-purple-300 transition-all cursor-default"
+                                className="px-3 py-1 rounded-lg text-xs font-medium transition-all cursor-default bg-elevated border border-subtle text-secondary"
                               >
                                 {tech}
                               </span>
@@ -212,7 +253,7 @@ function Experience() {
             
             {/* Timeline End */}
             <div className="flex justify-center mt-12">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-2xl shadow-lg shadow-purple-500/30 animate-bounce">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-lg animate-bounce bg-brand">
                 🎯
               </div>
             </div>
@@ -228,7 +269,7 @@ function Experience() {
         {/* Call to Action */}
         <div className="mt-20 text-center">
           <div className="glass-card rounded-2xl p-8 inline-block">
-            <p className="text-gray-400 mb-4">Interested in working together?</p>
+            <p className="mb-4 text-secondary">Interested in working together?</p>
             <Link 
               to="/#contact" 
               className="btn-primary inline-flex items-center gap-2"

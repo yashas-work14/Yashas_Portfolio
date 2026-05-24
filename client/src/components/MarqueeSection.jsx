@@ -14,13 +14,12 @@ export const MarqueeSection = () => {
         { src: './Images/sql.png', alt: 'SQL' },
         { src: './Images/mongodb.png', alt: 'MongoDB' },
         { src: './Images/mongoose.png', alt: 'Mongoose' },
-        { src: './Images/npm.png', alt: 'NPM' },
-        { src: './Images/redis.png', alt: 'Redis' },
         { src: './Images/git.png', alt: 'Git' },
         { src: './Images/github.png', alt: 'GitHub' },
         { src: './Images/figma.png', alt: 'Figma' },
-        { src: './Images/postman.png', alt: 'Postman' },
         { src: './Images/docker.png', alt: 'Docker' },
+        { src: './Images/vscode.svg', alt: 'VS Code' },
+        { src: './Images/visualstudio.svg', alt: 'Visual Studio' },
         // Power BI & Cloud
         { src: './Images/powerbi.png', alt: 'Power BI' },
         { src: './Images/aws.png', alt: 'AWS' },
@@ -41,16 +40,16 @@ export const MarqueeSection = () => {
         <section className="py-16">
             {/* Section Header */}
             <div className="text-center mb-12">
-                <p className="text-purple-400 font-semibold tracking-wider uppercase mb-4">Technologies</p>
+                <p className="font-semibold tracking-wider uppercase mb-4 text-cyan">Technologies</p>
                 <h2 className="text-3xl sm:text-4xl font-bold gradient-text">Tech Stack I Work With</h2>
             </div>
 
             {/* Marquee Container with Glow Effect */}
             <div className="relative">
                 {/* Left Fade */}
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-950 to-transparent z-10" />
+                <div className="absolute left-0 top-0 bottom-0 w-32 z-10 marquee-fade-left" />
                 {/* Right Fade */}
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-950 to-transparent z-10" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 z-10 marquee-fade-right" />
 
                 <div className="glass-card py-8 mx-6 rounded-2xl">
                     <Marquee pauseOnHover speed={60} gradient={false}>
@@ -66,9 +65,9 @@ export const MarqueeSection = () => {
                                             alt={tech.alt}
                                             className="h-16 w-auto object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"
                                         />
-                                        <div className="absolute inset-0 bg-purple-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                                        <div className="absolute inset-0 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 img-hover-glow" />
                                     </div>
-                                    <span className="text-xs text-gray-500 group-hover:text-purple-400 transition-colors font-medium opacity-0 group-hover:opacity-100">
+                                    <span className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-colors tech-label">
                                         {tech.alt}
                                     </span>
                                 </div>
@@ -80,8 +79,8 @@ export const MarqueeSection = () => {
 
             {/* Reverse Marquee for Visual Effect */}
             <div className="relative mt-6">
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-950 to-transparent z-10" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-950 to-transparent z-10" />
+                <div className="absolute left-0 top-0 bottom-0 w-32 z-10 marquee-fade-left" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 z-10 marquee-fade-right" />
 
                 <div className="glass-card py-8 mx-6 rounded-2xl">
                     <Marquee pauseOnHover speed={40} direction="right" gradient={false}>

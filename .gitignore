@@ -1,0 +1,9 @@
+# Unwanted / scratch files
+Unwanted/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Volunteer originals (already copied to public/certificates)
+Volunteer/

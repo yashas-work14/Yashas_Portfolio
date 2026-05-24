@@ -146,7 +146,7 @@ function AbstractToggle({ text, accentColor }) {
   const isLong = text.length > limit
   return (
     <div>
-      <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', fontSize: '0.875rem' }}>
+      <p className="text-secondary text-sm leading-[1.7]">
         {expanded || !isLong ? text : text.slice(0, limit).trimEnd() + '…'}
       </p>
       {isLong && (
@@ -184,16 +184,12 @@ function DomainPill({ domain, active, onClick }) {
 
 /* ─── Paper card ─────────────────────────────────────────────────── */
 function PaperCard({ pub, cfg, index }) {
-  const [hovered, setHovered] = useState(false)
   return (
     <div
-      className="glass-card rounded-2xl overflow-hidden transition-all duration-300"
+      className="glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
       style={{
         borderLeft: `4px solid ${cfg.accent}`,
-        boxShadow: hovered ? `0 8px 40px -8px ${cfg.accent}55` : undefined,
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
     >
       {/* Top row */}
       <div className="flex items-center justify-between px-6 pt-5 pb-3 flex-wrap gap-3">
@@ -205,16 +201,12 @@ function PaperCard({ pub, cfg, index }) {
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="px-3 py-0.5 rounded-full text-xs font-bold"
-            style={{ background: 'rgba(139,92,246,0.15)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.3)' }}>
+          <span className="px-3 py-0.5 rounded-full text-xs font-bold bg-[rgba(139,92,246,0.15)] text-[#a78bfa] border border-[rgba(139,92,246,0.3)]">
             {pub.year}
           </span>
           {pub.certificateUrl && (
             <a href={pub.certificateUrl} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition-all"
-              style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.3)', color: '#34d399' }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(16,185,129,0.22)'; e.currentTarget.style.color = '#6ee7b7' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(16,185,129,0.1)'; e.currentTarget.style.color = '#34d399' }}>
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition-all pub-cert-btn bg-[rgba(16,185,129,0.1)] border border-[rgba(16,185,129,0.3)] text-[#34d399]">
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
@@ -222,10 +214,7 @@ function PaperCard({ pub, cfg, index }) {
             </a>
           )}
           <a href={pub.ieeeLink} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition-all"
-            style={{ background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.3)', color: '#60a5fa' }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(59,130,246,0.22)'; e.currentTarget.style.color = '#93c5fd' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(59,130,246,0.1)'; e.currentTarget.style.color = '#60a5fa' }}>
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition-all pub-ieee-btn bg-[rgba(59,130,246,0.1)] border border-[rgba(59,130,246,0.3)] text-[#60a5fa]">
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
@@ -236,7 +225,7 @@ function PaperCard({ pub, cfg, index }) {
 
       <div className="px-6 pb-6">
         {/* Venue */}
-        <p className="text-xs mb-3 leading-snug" style={{ color: 'var(--text-muted)' }}>
+        <p className="text-xs mb-3 leading-snug text-muted">
           📍 {pub.venue}
         </p>
 
@@ -246,20 +235,19 @@ function PaperCard({ pub, cfg, index }) {
             style={{ background: `${cfg.accent}20`, color: cfg.accent, border: `1.5px solid ${cfg.accent}44` }}>
             {index + 1}
           </span>
-          <h3 className="text-lg sm:text-xl font-bold leading-snug transition-colors"
-            style={{ color: hovered ? cfg.accent : 'var(--text-primary)' }}>
+          <h3 className="text-lg sm:text-xl font-bold leading-snug transition-colors">
             {pub.title}
           </h3>
         </div>
 
         {/* Authors */}
         <div className="flex items-start gap-2 mb-4">
-          <svg className="w-4 h-4 mt-0.5 shrink-0" style={{ color: 'var(--text-muted)' }}
+          <svg className="w-4 h-4 mt-0.5 shrink-0 text-muted"
             fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
               d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
-          <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-sm leading-relaxed text-secondary">
             {pub.authors.join(' · ')}
           </p>
         </div>
@@ -267,7 +255,7 @@ function PaperCard({ pub, cfg, index }) {
         {/* Brief */}
         <div className="rounded-xl p-4 mb-4"
           style={{ background: `${cfg.accent}0d`, border: `1px solid ${cfg.accent}2a` }}>
-          <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-sm leading-relaxed text-secondary">
             <span style={{ color: cfg.accent, fontWeight: 700 }}>Overview: </span>
             {pub.brief}
           </p>
@@ -275,13 +263,12 @@ function PaperCard({ pub, cfg, index }) {
 
         {/* Abstract */}
         <div className="mb-5">
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>Abstract</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2 text-muted">Abstract</p>
           <AbstractToggle text={pub.abstract} accentColor={cfg.accent} />
         </div>
 
         {/* Tags + meta */}
-        <div className="flex flex-wrap items-end justify-between gap-4 pt-4"
-          style={{ borderTop: '1px solid var(--border-color)' }}>
+        <div className="flex flex-wrap items-end justify-between gap-4 pt-4 border-t border-[var(--border-color)]">
           <div className="flex flex-wrap gap-1.5">
             {pub.tags.map((tag, i) => (
               <span key={i} className="px-2.5 py-0.5 rounded-full text-xs font-semibold"
@@ -290,7 +277,7 @@ function PaperCard({ pub, cfg, index }) {
               </span>
             ))}
           </div>
-          <div className="flex items-center gap-3 text-xs shrink-0" style={{ color: 'var(--text-muted)' }}>
+          <div className="flex items-center gap-3 text-xs shrink-0 text-muted">
             <span className="flex items-center gap-1">
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -349,10 +336,7 @@ function Publications() {
 
         {/* Back */}
         <Link to="/"
-          className="inline-flex items-center gap-2 mb-8 transition-colors font-medium text-sm"
-          style={{ color: 'var(--text-muted)' }}
-          onMouseEnter={e => e.currentTarget.style.color = '#a855f7'}
-          onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}>
+          className="inline-flex items-center gap-2 mb-8 transition-colors font-medium text-sm text-muted hover-text-accent">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -361,15 +345,12 @@ function Publications() {
 
         {/* ── Hero ── */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5"
-            style={{ background: 'rgba(139,92,246,0.12)', border: '1px solid rgba(139,92,246,0.25)' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5 bg-[rgba(139,92,246,0.12)] border border-[rgba(139,92,246,0.25)]">
             <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-                style={{ background: '#a78bfa' }} />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5"
-                style={{ background: '#8b5cf6' }} />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-[#a78bfa]" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#8b5cf6]" />
             </span>
-            <span style={{ color: '#a78bfa', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <span className="text-[#a78bfa] text-[0.78rem] font-bold tracking-[0.08em] uppercase">
               Peer-Reviewed Research
             </span>
           </div>
@@ -377,17 +358,14 @@ function Publications() {
           <h1 className="text-5xl sm:text-6xl font-extrabold gradient-text mb-4 leading-tight tracking-tight">
             Publications
           </h1>
-          <p style={{ color: 'var(--text-secondary)', maxWidth: '34rem', margin: '0 auto 1.5rem', lineHeight: 1.7, fontSize: '1rem' }}>
+          <p className="text-secondary max-w-[34rem] mx-auto mb-6 leading-[1.7] text-base">
             IEEE-indexed research spanning AI, healthcare diagnostics, smart systems, and precision agriculture —
             bridging cutting-edge science with real-world impact.
           </p>
 
           <a href="https://scholar.google.com/citations?user=zEQLrAEAAAAJ&hl=en"
             target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm transition-all"
-            style={{ background: 'rgba(59,130,246,0.12)', border: '1.5px solid rgba(59,130,246,0.3)', color: '#60a5fa' }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(59,130,246,0.22)'; e.currentTarget.style.color = '#93c5fd' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(59,130,246,0.12)'; e.currentTarget.style.color = '#60a5fa' }}>
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm transition-all pub-scholar-btn bg-[rgba(59,130,246,0.12)] border-[1.5px] border-[rgba(59,130,246,0.3)] text-[#60a5fa]">
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5h3.7v10h2.6v-5h2.6v4.9h2.7V9.5H15l-3-2.7V24H12V0zm8 6.5l4 3.5H20V6.5z"/>
             </svg>
@@ -398,20 +376,18 @@ function Publications() {
         {/* ── Stats ── */}
         <div className="mb-10">
           {/* Overall count — hero stat */}
-          <div className="glass-card rounded-2xl p-6 mb-4 text-center relative overflow-hidden hover:scale-[1.02] transition-transform duration-300"
-            style={{ border: '1.5px solid rgba(139,92,246,0.3)', boxShadow: '0 0 40px rgba(139,92,246,0.12)' }}>
+          <div className="glass-card rounded-2xl p-6 mb-4 text-center relative overflow-hidden hover:scale-[1.02] transition-transform duration-300 border-[1.5px] border-[rgba(139,92,246,0.3)] shadow-[0_0_40px_rgba(139,92,246,0.12)]">
             {/* Decorative blobs */}
-            <div className="absolute -top-6 -left-6 w-28 h-28 rounded-full blur-2xl pointer-events-none" style={{ background: 'rgba(139,92,246,0.18)' }} />
-            <div className="absolute -bottom-6 -right-6 w-28 h-28 rounded-full blur-2xl pointer-events-none" style={{ background: 'rgba(236,72,153,0.15)' }} />
+            <div className="absolute -top-6 -left-6 w-28 h-28 rounded-full blur-2xl pointer-events-none bg-[rgba(139,92,246,0.18)]" />
+            <div className="absolute -bottom-6 -right-6 w-28 h-28 rounded-full blur-2xl pointer-events-none bg-[rgba(236,72,153,0.15)]" />
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <div className="flex items-center justify-center w-16 h-16 rounded-2xl text-3xl"
-                style={{ background: 'rgba(139,92,246,0.15)', border: '1.5px solid rgba(139,92,246,0.3)' }}>
+              <div className="flex items-center justify-center w-16 h-16 rounded-2xl text-3xl bg-[rgba(139,92,246,0.15)] border-[1.5px] border-[rgba(139,92,246,0.3)]">
                 📝
               </div>
               <div className="text-center sm:text-left">
                 <p className="text-5xl font-black leading-none gradient-text">9</p>
-                <p className="text-base font-bold mt-1" style={{ color: 'var(--text-primary)' }}>Total Research Publications</p>
-                <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>Peer-reviewed · Internationally indexed</p>
+                <p className="text-base font-bold mt-1">Total Research Publications</p>
+                <p className="text-xs mt-0.5 text-muted">Peer-reviewed · Internationally indexed</p>
               </div>
             </div>
           </div>
@@ -428,8 +404,8 @@ function Publications() {
               </div>
               <div>
                 <p className="text-3xl font-black leading-none" style={{ color: '#60a5fa' }}>8</p>
-                <p className="text-sm font-bold mt-0.5" style={{ color: 'var(--text-primary)' }}>IEEE Conference Papers</p>
-                <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>Published · IEEE Xplore indexed</p>
+                <p className="text-sm font-bold mt-0.5">IEEE Conference Papers</p>
+                <p className="text-xs mt-0.5 text-muted">Published · IEEE Xplore indexed</p>
               </div>
             </div>
 
@@ -443,8 +419,8 @@ function Publications() {
               </div>
               <div>
                 <p className="text-3xl font-black leading-none" style={{ color: '#34d399' }}>1</p>
-                <p className="text-sm font-bold mt-0.5" style={{ color: 'var(--text-primary)' }}>Springer Conference Paper</p>
-                <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>Presented · Springer indexed</p>
+                <p className="text-sm font-bold mt-0.5">Springer Conference Paper</p>
+                <p className="text-xs mt-0.5 text-muted">Presented · Springer indexed</p>
               </div>
             </div>
           </div>
@@ -452,7 +428,7 @@ function Publications() {
 
         {/* ── Domain filter ── */}
         <div className="mb-5">
-          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--text-muted)' }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-3 text-muted">
             Filter by Research Domain
           </p>
           <div className="flex flex-wrap gap-2">
@@ -474,7 +450,7 @@ function Publications() {
         {/* ── Year filter + Search ── */}
         <div className="flex flex-col sm:flex-row gap-3 mb-6 items-start">
           <div className="flex gap-2 flex-wrap items-center">
-            <span className="text-xs font-bold uppercase tracking-widest mr-1" style={{ color: 'var(--text-muted)' }}>Year:</span>
+            <span className="text-xs font-bold uppercase tracking-widest mr-1 text-muted">Year:</span>
             {years.map(y => (
               <button key={y} onClick={() => setFilterYear(String(y))}
                 className="px-4 py-1.5 rounded-full text-sm font-semibold transition-all"
@@ -489,23 +465,22 @@ function Publications() {
             ))}
           </div>
           <div className="relative w-full sm:max-w-xs sm:ml-auto">
-            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'var(--text-muted)' }}
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted"
               fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z"/>
             </svg>
             <input type="text" placeholder="Search title, tag, author…"
               value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-full text-sm glass-card focus:outline-none"
-              style={{ border: '1.5px solid rgba(139,92,246,0.2)', color: 'var(--text-primary)', background: 'transparent' }}
+              className="w-full pl-9 pr-4 py-2 rounded-full text-sm glass-card focus:outline-none border-[1.5px] border-[rgba(139,92,246,0.2)] bg-transparent"
             />
           </div>
         </div>
 
         {/* ── Result count ── */}
-        <p className="text-sm mb-8" style={{ color: 'var(--text-muted)' }}>
-          Showing <span style={{ color: '#a78bfa', fontWeight: 700 }}>{filtered.length}</span> of {publications.length} publications
-          {filterYear !== 'All' && <> · Year: <span style={{ color: '#a78bfa', fontWeight: 600 }}>{filterYear}</span></>}
-          {filterDomain !== 'All' && <> · Domain: <span style={{ color: DOMAIN_CONFIG[filterDomain]?.accent, fontWeight: 600 }}>{filterDomain}</span></>}
+        <p className="text-sm mb-8 text-muted">
+          Showing <span className="text-[#a78bfa] font-bold">{filtered.length}</span> of {publications.length} publications
+          {filterYear !== 'All' && <> · Year: <span className="text-[#a78bfa] font-semibold">{filterYear}</span></>}
+          {filterDomain !== 'All' && <> · Domain: <span className="font-semibold" style={{ color: DOMAIN_CONFIG[filterDomain]?.accent }}>{filterDomain}</span></>}
         </p>
 
         {/* ── Cards grouped by year ── */}
@@ -515,16 +490,16 @@ function Publications() {
               <div key={year}>
                 {/* Year divider */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="h-px flex-1" style={{ background: 'var(--border-color)' }} />
+                  <div className="h-px flex-1 bg-[var(--border-color)]" />
                   <div className="flex items-center gap-2 px-4 py-1 rounded-full"
                     style={{ background: 'rgba(139,92,246,0.12)', border: '1px solid rgba(139,92,246,0.25)' }}>
-                    <svg className="w-3.5 h-3.5" style={{ color: '#a78bfa' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3.5 h-3.5 text-[#a78bfa]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
-                    <span style={{ color: '#a78bfa', fontWeight: 700, fontSize: '0.85rem' }}>{year}</span>
+                    <span className="text-[#a78bfa] font-bold text-[0.85rem]">{year}</span>
                   </div>
-                  <div className="h-px flex-1" style={{ background: 'var(--border-color)' }} />
+                  <div className="h-px flex-1 bg-[var(--border-color)]" />
                 </div>
 
                 <div className="space-y-5">
@@ -542,25 +517,22 @@ function Publications() {
         ) : (
           <div className="glass-card rounded-2xl p-12 text-center mt-4">
             <div className="text-5xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>No results found</h3>
-            <p style={{ color: 'var(--text-secondary)' }}>Try adjusting your search or filters.</p>
+            <h3 className="text-xl font-semibold mb-2">No results found</h3>
+            <p className="text-secondary">Try adjusting your search or filters.</p>
           </div>
         )}
 
         {/* ── Footer CTA ── */}
-        <div className="mt-16 glass-card rounded-2xl p-8 text-center"
-          style={{ borderColor: 'rgba(59,130,246,0.2)' }}>
+        <div className="mt-16 glass-card rounded-2xl p-8 text-center border-[rgba(59,130,246,0.2)]">
           <div className="text-3xl mb-3">🎓</div>
           <h3 className="text-lg font-bold mb-1 gradient-text">Google Scholar Profile</h3>
-          <p className="text-sm mb-5" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-sm mb-5 text-secondary">
             See full citation counts, h-index, and citation graph.
           </p>
           <a href="https://scholar.google.com/citations?user=zEQLrAEAAAAJ&hl=en"
             target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all"
-            style={{ background: 'rgba(59,130,246,0.15)', border: '1.5px solid rgba(59,130,246,0.35)', color: '#60a5fa' }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(59,130,246,0.25)'; e.currentTarget.style.color = '#93c5fd' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(59,130,246,0.15)'; e.currentTarget.style.color = '#60a5fa' }}>
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all pub-scholar-btn"
+            style={{ background: 'rgba(59,130,246,0.15)', border: '1.5px solid rgba(59,130,246,0.35)', color: '#60a5fa' }}>
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5h3.7v10h2.6v-5h2.6v4.9h2.7V9.5H15l-3-2.7V24H12V0zm8 6.5l4 3.5H20V6.5z"/>
             </svg>

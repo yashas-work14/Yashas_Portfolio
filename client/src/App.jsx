@@ -69,9 +69,9 @@ const TechBackground = () => {
       <svg className="circuit-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
         <defs>
           <linearGradient id="circuitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#667eea" stopOpacity="0.3" />
-            <stop offset="50%" stopColor="#764ba2" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#f093fb" stopOpacity="0.3" />
+            <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.3" />
+            <stop offset="50%" stopColor="#7C3AED" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.3" />
           </linearGradient>
         </defs>
         {/* Horizontal lines */}
@@ -94,7 +94,7 @@ const TechBackground = () => {
                 cx={320 * (j + 1)}
                 cy={135 * (i + 1)}
                 r="3"
-                fill="#667eea"
+                fill="#7C3AED"
                 className="circuit-node"
                 style={{ animationDelay: `${(i + j) * 0.3}s` }}
               />

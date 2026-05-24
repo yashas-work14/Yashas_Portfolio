@@ -11,7 +11,7 @@ function PortfolioNav() {
       color: 'from-blue-500 to-cyan-500',
       shadowColor: 'shadow-blue-500/25',
       description: 'Professional journey & work history',
-      stats: '2+ Years',
+      stats: '1.8+ Years',
     },
     {
       name: 'Projects',
@@ -47,7 +47,7 @@ function PortfolioNav() {
       color: 'from-indigo-500 to-purple-500',
       shadowColor: 'shadow-indigo-500/25',
       description: 'Research papers & articles',
-      stats: 'Published',
+      stats: '8 Published',
     },
     {
       name: 'Hackathons',
@@ -104,9 +104,8 @@ function PortfolioNav() {
     <section className="py-24 px-6 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-72 h-72 rounded-full blur-3xl bg-accent-primary-glow" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 rounded-full blur-3xl bg-accent-secondary-glow" />
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -123,13 +122,12 @@ function PortfolioNav() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, type: 'spring' }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 mb-6"
-          >
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 nav-active-bg">
             <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-accent-primary"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-accent-primary"></span>
             </span>
-            <span className="text-purple-400 font-semibold text-sm tracking-wider uppercase">Explore My Work</span>
+            <span className="font-semibold text-sm tracking-wider uppercase text-link">Explore My Work</span>
           </motion.div>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -137,7 +135,7 @@ function PortfolioNav() {
             <span className="text-white"> Showcase</span>
           </h2>
           
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto text-secondary">
             Dive into my professional journey through various dimensions of my career - 
             from technical expertise to creative achievements.
           </p>
@@ -177,12 +175,12 @@ function PortfolioNav() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+                    <h3 className="text-xl font-bold mb-2 transition-all duration-300">
                       {link.name}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                    <p className="text-sm mb-4 line-clamp-2 text-secondary">
                       {link.description}
                     </p>
 
@@ -223,7 +221,7 @@ function PortfolioNav() {
               {['💻', '🎨', '🔬', '📊'].map((emoji, i) => (
                 <span 
                   key={i} 
-                  className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-2 border-slate-800 flex items-center justify-center text-lg"
+                  className="w-10 h-10 rounded-full border-2 flex items-center justify-center text-lg bg-accent-primary-glow border-base"
                 >
                   {emoji}
                 </span>
@@ -231,11 +229,11 @@ function PortfolioNav() {
             </div>
             <div className="text-left">
               <p className="text-white font-semibold">Interested in collaboration?</p>
-              <p className="text-gray-400 text-sm">Let's build something amazing together</p>
+              <p className="text-sm text-secondary">Let's build something amazing together</p>
             </div>
             <a 
               href="#contact" 
-              className="ml-4 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300"
+              className="ml-4 px-6 py-3 rounded-xl text-white font-semibold hover:scale-105 transition-all duration-300 bg-brand"
             >
               Get in Touch
             </a>

@@ -3,7 +3,7 @@
 Welcome to my personal portfolio built using the MERN (MongoDB, Express.js, React.js, Node.js) stack! This project showcases my skills and projects as a web developer.
 Author
 
-**Sumukha N. Sureban**
+**Yashas D**
 
 Table of Contents
 
