@@ -1,0 +1,1 @@
+export const VERCEL_API = 'https://portfolio-react-ten-kappa.vercel.app/'
