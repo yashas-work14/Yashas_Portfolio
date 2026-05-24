@@ -44,7 +44,7 @@ function About() {
             </div>
 
             <a
-              href="/Yashas_D_Resume .pdf"
+              href="/Yashas_D_Resume.pdf"
               download
               className="btn-primary inline-flex items-center gap-3"
             >
